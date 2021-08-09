@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -eu
+
+exec shfmt -s -bn -sr -i 4 -w .
