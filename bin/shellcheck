@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -eu
+
+exec shellcheck --external-sources --shell=bash logging bin/*
