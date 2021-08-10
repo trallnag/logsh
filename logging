@@ -24,7 +24,7 @@
 #
 # ------------------------------------------------------------------------------
 
-if [ "${LOGSH_COLOR:-true}" == "true" ]; then
+if [ "${LOGSH_COLOR:-true}" = "true" ]; then
     _logsh_default_color='\033[0m'
     _logsh_debug_color='\033[36m'
     _logsh_info_color='\033[34m'
