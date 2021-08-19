@@ -1,0 +1,23 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+repos:
+
+  # ============================================================================
+  # Local
+  
+  - repo: local
+    hooks:
+      - id: shellcheck
+        name: shellcheck
+        language: script
+        files: '(?x)(log\.sh|logsh-update|^bin\/)'
+        entry: bin/shellcheck
+
+      - id: shfmt
+        name: shfmt
+        language: script
+        files: '(?x)(log\.sh|logsh-update|^bin\/)'
+        entry: bin/shfmt
+
+  # ============================================================================
