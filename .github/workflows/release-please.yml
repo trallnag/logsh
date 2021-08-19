@@ -1,13 +1,12 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: Lint
+name: main
 
 on:
   workflow_dispatch:
   push:
     branches:
       - master
-  pull_request:
 
 jobs:
   lint:
@@ -24,3 +23,10 @@ jobs:
 
       - name: Run shfmt
         run: bin/shfmt
+
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        with:
+          release-type: simple
