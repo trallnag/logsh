@@ -1,0 +1,39 @@
+#!/bin/sh
+
+usage() {
+    cat << EOF
+Add or update Trallnags 'logging' shell library.
+
+This script will ensure that 'log.sh' can be found in the same
+directory as this script itself.
+
+Only works on Unix-like systems as it depends on '/tmp' being available and
+POSIX shell magic to get the script directory.
+EOF
+}
+
+case $1 in -h | --help) usage && exit ;; esac
+
+# Get source dir of script. <https://stackoverflow.com/a/29835459/7391331>.
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+# ==============================================================================
+
+set -eu
+
+dir=git-trallnag-logsh
+
+cd /tmp
+
+if ! [ -d "$dir/.git" ]; then
+    echo "Clone 'https://github.com/trallnag/logsh.git' to '$dir'..."
+    git clone https://github.com/trallnag/logsh.git "$dir"
+    cd "$dir"
+else
+    echo "Pull 'https://github.com/trallnag/logsh.git' at '$dir'..."
+    cd "$dir"
+    git pull --all --tags
+fi
+
+echo "Force copy '$dir/log.sh' to '$script_dir/'..."
+cp --force log.sh "$script_dir/"
