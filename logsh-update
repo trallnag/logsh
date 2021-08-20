@@ -36,21 +36,27 @@ fi
 
 set -eu
 
-dir=git-trallnag-logsh
-
-cd /tmp
+dir=/tmp/git-trallnag-logsh
 
 if ! [ -d "$dir/.git" ]; then
+    echo "'$dir/.git' does not exist yet. Time to clone."
     echo "Clone 'https://github.com/trallnag/logsh.git' to '$dir'..."
     git clone https://github.com/trallnag/logsh.git "$dir"
-    cd "$dir"
 else
+    echo "'$dir/.git' already exists. No need to clone."
     echo "Pull 'https://github.com/trallnag/logsh.git' at '$dir'..."
     cd "$dir"
-    git pull --all --tags
+    git checkout master
+    if ! git pull --all --tags; then
+        cd ..
+        rm -rf "$dir"
+        git clone https://github.com/trallnag/logsh.git "$dir"
+        cd "$dir"
+    fi
 fi
 
+git config advice.detachedHead false
 git checkout "$reference"
 
 echo "Force copy '$dir/log.sh' to '$script_dir/'..."
-cp --force log.sh "$script_dir/logsh"
+cp --force log.sh "$script_dir/log.sh"
