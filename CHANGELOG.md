@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/trallnag/logsh/compare/v1.0.0...v1.0.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* Correct handling of detached and bad states ([20782b4](https://github.com/trallnag/logsh/commit/20782b48f926a2e5f775b321943fd53434c86f99))
+
 # 1.0.0 (2021-08-20)
 
 
