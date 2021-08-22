@@ -2,4 +2,4 @@
 
 set -eu
 
-shellcheck --external-sources --shell=sh log.sh bin/*
+shellcheck --external-sources --shell=sh log.sh update-logsh bin/*
