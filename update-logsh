@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Get source dir of script. <https://stackoverflow.com/a/29835459/7391331>.
-script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-
 usage() {
     cat << EOF
 Add or update Trallnags 'logging' shell library.
@@ -26,7 +23,10 @@ EOF
 
 case $1 in -h | --help) usage && exit ;; esac
 
+# Get source dir of script. <https://stackoverflow.com/a/29835459/7391331>.
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
+# ==============================================================================
 
 if [ -z "$1" ]; then
     reference=master
