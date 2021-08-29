@@ -2,10 +2,12 @@
 
 usage() {
     cat << EOF
-Add or update Trallnags 'logging' shell library.
+Add or update the Logsh library.
 
 This script will ensure that 'log.sh' can be found in the same
-directory as this script itself.
+directory as this script itself. To use it, source it.
+
+<https://github.com/trallnag/logsh>
 
 Usage:
     $0 [reference]
