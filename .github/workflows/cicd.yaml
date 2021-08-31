@@ -13,9 +13,22 @@ jobs:
 
       - uses: asdf-vm/actions/install@v1
 
-      - run: bin/shellcheck
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
 
-      - run: bin/shfmt
+      - name: Setup pre-commit
+        run: |
+          pip install pre-commit
+          pre-commit install
+
+      - name: Configure cache for pre-commit
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ runner.os }}-pre-commit
+
+      - run: pre-commit run --all-files --verbose --show-diff-on-failure
 
       - uses: cycjimmy/semantic-release-action@v2
         with:

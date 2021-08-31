@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -eu
-
-shellcheck --external-sources --shell=sh log.sh update-logsh bin/*

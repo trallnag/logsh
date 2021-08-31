@@ -4,20 +4,45 @@
 repos:
 
   # ============================================================================
+  # Remote
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v4.0.1"
+    hooks:
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-yaml
+        args:
+          - --allow-multiple-documents
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: trailing-whitespace
+
+  # ============================================================================
   # Local
-  
+
   - repo: local
     hooks:
       - id: shellcheck
         name: shellcheck
-        language: script
-        files: '(?x)(log\.sh|logsh-update|^bin\/)'
-        entry: bin/shellcheck
+        require_serial: true
+        types: [executable, text]
+        language: system
+        entry: shellcheck --external-sources --shell=bash
 
+  - repo: local
+    hooks:
       - id: shfmt
         name: shfmt
-        language: script
-        files: '(?x)(log\.sh|logsh-update|^bin\/)'
-        entry: bin/shfmt
+        require_serial: true
+        types: [executable, text]
+        language: system
+        entry: shfmt -s -bn -sr -i 4 -w
 
   # ============================================================================
+
+exclude: |
+  (?x)(
+    ^CHANGELOG.md$
+  )

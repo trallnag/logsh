@@ -8,9 +8,10 @@ Used for maintaining pre-commit hooks.
 * <https://github.com/pre-commit/pre-commit>
 
 Pre-commit is configured via [`.pre-commit-config.yaml`](.pre-commit-config.yaml).
-It should automatically run on every commit.
+It should automatically run on every commit. It is also run as part of the CI/CD
+pipeline.
 
-To trigger pre-commit manually, execute `pre-commit run --all-files`.
+To trigger pre-commit manually, execute `pre-commit run -a`.
 
 ## ASDF
 
