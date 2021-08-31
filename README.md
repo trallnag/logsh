@@ -1,7 +1,7 @@
 # Logsh
 
 A minimal POSIX compliant logging library contained in a single Shell script
-made to be sourced in every file you want to use the libraries functions.
+made to be sourced in every file you want to use the library's functions.
 
 ![screenshot-console-logsh](images/screenshot-console-logsh.png)
 
