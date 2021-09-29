@@ -1,15 +1,25 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
+name: secondary
+
 on:
   workflow_dispatch:
+  pull_request:
   push:
+    branches-ignore: [master]
 
 jobs:
-  cicd:
+  secondary:
     runs-on: ubuntu-latest
 
     steps:
+
+      # ------------------------------------------------------------------------
+
       - uses: actions/checkout@v2
+
+      # ------------------------------------------------------------------------
+      # Pre-Commit
 
       - uses: asdf-vm/actions/install@v1
 
@@ -22,7 +32,7 @@ jobs:
           pip install pre-commit
           pre-commit install
 
-      - name: Configure cache for pre-commit
+      - name: Cache pre-commit
         uses: actions/cache@v2
         with:
           path: ~/.cache/pre-commit
@@ -30,11 +40,4 @@ jobs:
 
       - run: pre-commit run --all-files --verbose --show-diff-on-failure
 
-      - uses: cycjimmy/semantic-release-action@v2
-        with:
-          semantic_version: 17.4.7
-          extra_plugins: |
-            @semantic-release/changelog
-            @semantic-release/git
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # ------------------------------------------------------------------------
