@@ -1,6 +1,6 @@
 # Changelog
 
-### [1.0.2](https://github.com/trallnag/logsh/compare/v1.0.1...1.0.2) (2021-09-29)
+## [1.0.2](https://github.com/trallnag/logsh/compare/v1.0.1...1.0.2) (2021-09-29)
 
 
 ### 📝 Documentation
@@ -22,7 +22,7 @@
 * Improve dir handling ([74c404e](https://github.com/trallnag/logsh/commit/74c404e9963af1c9e4e4ace52676b36e7e3b3db5))
 * Rename and fix logsh update script ([a33cf6d](https://github.com/trallnag/logsh/commit/a33cf6dcd1d59e3086b441bff7f9b667cd86eb21))
 
-# 1.0.0 (2021-08-20)
+## 1.0.0 (2021-08-20)
 
 
 ### ✨ Features
