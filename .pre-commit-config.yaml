@@ -7,7 +7,7 @@ repos:
   # Remote
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.0.1"
+    rev: "v4.1.0"
     hooks:
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
@@ -22,6 +22,13 @@ repos:
     rev: v1.26.3
     hooks:
       - id: yamllint
+
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v6.0.0
+    hooks:
+      - id: commitlint
+        stages: [commit-msg]
+        additional_dependencies: ['@commitlint/config-conventional']
 
   # ----------------------------------------------------------------------------
   # Local

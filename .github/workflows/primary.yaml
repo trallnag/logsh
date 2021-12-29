@@ -18,13 +18,15 @@ jobs:
       - uses: actions/checkout@v2
 
       # ------------------------------------------------------------------------
-      # Pre-Commit
 
       - uses: asdf-vm/actions/install@v1
 
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9
+
+      # ------------------------------------------------------------------------
+      # Pre-Commit
 
       - name: Setup pre-commit
         run: |
