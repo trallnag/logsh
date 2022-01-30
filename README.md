@@ -52,3 +52,17 @@ In:
 Out:
 
 * Being a "real" logging framework.
+
+## Alternative
+
+Just use this block of code:
+
+```shell
+_log() { printf '%b[%s] %s%b\n' "$3" "$2" "$1" '\033[0m' >&2; }
+logexit() { _log "$1" "ERROR" '\033[31m'; exit 1; }
+logerror() { _log "$1" "ERROR" '\033[31m'; }
+logwarning() { _log "$1" "WARNING" '\033[33m'; }
+logsuccess() { _log "$1" "SUCCESS" '\033[32m'; }
+loginfo() { _log "$1" "INFO" '\033[34m'; }
+logdebug() { _log "$1" "DEBUG" '\033[36m'; }
+```
