@@ -52,14 +52,3 @@ In:
 Out:
 
 * Being a "real" logging framework.
-
-## License
-
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
-
-## Contact
-
-```txt
-Tim Schwenke <tim.schwenke@trallnag.com>
-ACCB8F306184BEEE49E7370E5DBF2C327E72AA3F
-```

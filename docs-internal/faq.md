@@ -15,6 +15,16 @@ the same to the changelog. But again, this last step is optional.
 
 ## How to setup local dev environment?
 
+Ensure that [asdf](https://github.com/asdf-vm/asdf) is installed. It is used for
+a few CLI tools that are executed automatically by pre-commit. Read
+[`asdf.md`](asdf.md) for more information.
+
+Install the required tools with asdf.
+
+```shell
+asdf install
+```
+
 Ensure that [pre-commit](https://github.com/pre-commit/pre-commit) is installed.
 Pre-commit is used for maintaing Git hooks used in this project. Read
 [`pre-commit.md`](pre-commit.md) for more information.
