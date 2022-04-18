@@ -34,6 +34,9 @@
 #         2=SUCCESS
 #         3=INFO
 #         4=DEBUG
+#
+# Source Repository:
+#     https://github.com/trallnag/logsh
 
 # ------------------------------------------------------------------------------
 

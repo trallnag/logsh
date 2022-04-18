@@ -2,8 +2,8 @@
 
 Used for maintaining Git hooks.
 
-* <https://pre-commit.com/>
-* <https://github.com/pre-commit/pre-commit>
+- <https://pre-commit.com/>
+- <https://github.com/pre-commit/pre-commit>
 
 Whenever this repository is cloned, the following commands must be executed:
 

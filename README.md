@@ -12,10 +12,10 @@ made to be sourced in every file you want to use the library's functions.
 Download [`log.sh`](log.sh) to whatever location you want to use the library.
 So usually right next to the script from where `log.sh` is sourced from.
 
-Alternatively, use [`update-logsh`](update-logsh) to download `log.sh`.
+Alternatively, use [`update-log.sh`](update-log.sh) to download `log.sh`.
 It can be used to download and place `log.sh` to the directory where
-`update-logsh` is located at. `update-logsh` also allows
-downloading a specific commit reference.
+`update-log.sh` is located at. The script also allows downloading a specific
+commit reference.
 
 Usually you will end up with many `log.sh` scattered around different places.
 
@@ -31,12 +31,12 @@ script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
 Now several functions for logging will be available.
 
-* logdebug
-* loginfo
-* logsuccess
-* logwarning
-* logerror
-* logexit
+- logdebug
+- loginfo
+- logsuccess
+- logwarning
+- logerror
+- logexit
 
 To find more information about the inner workings of `log.sh` or how to
 configure it with environment variables, check out the script itself.
@@ -45,13 +45,13 @@ configure it with environment variables, check out the script itself.
 
 In:
 
-* Set of logging functions that are sourced from a single self-contained file.
-* POSIX-compliant and only using features that are supported by `sh`.
-* Configuration via environment variables.
+- Set of logging functions that are sourced from a single self-contained file.
+- POSIX-compliant and only using features that are supported by `sh`.
+- Configuration via environment variables.
 
 Out:
 
-* Being a "real" logging framework.
+- Being a "real" logging framework.
 
 ## Alternative
 
