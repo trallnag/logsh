@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.3](https://github.com/trallnag/logsh/compare/1.0.2...1.0.3) (2022-07-03)
+
+
+### Docs
+
+* add alternative ([a477ac6](https://github.com/trallnag/logsh/commit/a477ac697c042513acf82a29a8188d5c50bc89d5))
+* **changelog:** Adjust heading levels ([c7c2a1d](https://github.com/trallnag/logsh/commit/c7c2a1d4f59dc01445e109b3baa250ec505371a1))
+* update documentation ([b7b4e6c](https://github.com/trallnag/logsh/commit/b7b4e6cd9f7a4563958f99b6b7205ca167eca4ad))
+* update misc ([6ff0df8](https://github.com/trallnag/logsh/commit/6ff0df828d310769eca0ca289e459e92cfdaa2d2))
+
+
+### Refactor
+
+* Adjust indentation and comments ([96c9d07](https://github.com/trallnag/logsh/commit/96c9d07c7ee9bca74aa5dac7df9094092f97cb47))
+* Rehaul CI and dev setup ([5bbe638](https://github.com/trallnag/logsh/commit/5bbe638bb7d9ce29ea2970970224c91f43335643))
+* Switch to ISC license ([efe415d](https://github.com/trallnag/logsh/commit/efe415d27dfc4a5d01b7c60cd9267f1e304df8fc))
+
 ## [1.0.2](https://github.com/trallnag/logsh/compare/v1.0.1...1.0.2) (2021-09-29)
 
 
