@@ -12,7 +12,7 @@ module.exports = {
 
   preset: 'conventionalcommits',
 
-  tagFormat: '${version}',
+  tagFormat: 'v${version}',
 
   plugins: [
     [

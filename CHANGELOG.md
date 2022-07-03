@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.3](https://github.com/trallnag/logsh/compare/1.0.2...1.0.3) (2022-07-03)
+## [1.0.3](https://github.com/trallnag/logsh/compare/v1.0.2...v1.0.3) (2022-07-03)
 
 
 ### Docs
@@ -17,7 +17,7 @@
 * Rehaul CI and dev setup ([5bbe638](https://github.com/trallnag/logsh/commit/5bbe638bb7d9ce29ea2970970224c91f43335643))
 * Switch to ISC license ([efe415d](https://github.com/trallnag/logsh/commit/efe415d27dfc4a5d01b7c60cd9267f1e304df8fc))
 
-## [1.0.2](https://github.com/trallnag/logsh/compare/v1.0.1...1.0.2) (2021-09-29)
+## [1.0.2](https://github.com/trallnag/logsh/compare/v1.0.1...v1.0.2) (2021-09-29)
 
 
 ### Docs
