@@ -18,16 +18,14 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      # ------------------------------------------------------------------------
-
       - uses: asdf-vm/actions/install@v1
-
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.10"
 
       # ------------------------------------------------------------------------
       # Pre-Commit
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
 
       - name: Setup pre-commit
         run: |
@@ -35,11 +33,12 @@ jobs:
           pre-commit install
 
       - name: Cache pre-commit
-        uses: actions/cache@v3.0.2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/pre-commit
           key: ${{ runner.os }}-pre-commit
 
-      - run: pre-commit run --all-files --verbose --show-diff-on-failure
+      - name: Run pre-commit
+        run: pre-commit run --all-files --verbose --show-diff-on-failure
 
       # ------------------------------------------------------------------------

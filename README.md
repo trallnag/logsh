@@ -2,26 +2,26 @@
 
 # Logsh
 
-Minimal POSIX compliant logging contained in a single Shell script
-made to be sourced in every file you want to use the library's functions.
+Minimal POSIX compliant logging contained in a single Shell script made to be
+sourced in every file you want to use the library's functions.
 
 ![screenshot-console-logsh](images/screenshot-console-logsh.png)
 
 ## Setup
 
-Download [`log.sh`](log.sh) to whatever location you want to use the library.
-So usually right next to the script from where `log.sh` is sourced from.
+Download [`log.sh`](log.sh) to whatever location you want to use the library. So
+usually right next to the script from where `log.sh` is sourced from.
 
-Alternatively, use [`update-log.sh`](update-log.sh) to download `log.sh`.
-It can be used to download and place `log.sh` to the directory where
-`update-log.sh` is located at. The script also allows downloading a specific
-commit reference.
+Alternatively, use [`update-log.sh`](update-log.sh) to download `log.sh`. It can
+be used to download and place `log.sh` to the directory where `update-log.sh` is
+located at. The script also allows downloading a specific commit reference.
 
 Usually you will end up with many `log.sh` scattered around different places.
 
 ## Usage
 
-Source `log.sh` from within scripts where you want to use it with a block like this:
+Source `log.sh` from within scripts where you want to use it with a block like
+this:
 
 ```sh
 script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)

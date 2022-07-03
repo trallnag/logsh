@@ -12,23 +12,26 @@
 Push the default branch to remote and wait for the finish of the GitHub Actions
 workflow "primary".
 
-According to the rules of semantic versioning and conventional commits
-a new version might be released. This is handled by semantic-release. Read
+According to the rules of semantic versioning and conventional commits a new
+version might be released. This is handled by semantic-release. Read
 [`semantic-release.md`](semantic-release.md) for more information.
 
 If a new version is released, edit the GitHub release notes to add anything
-noteworthy beyond the automatically generated content. Also make sure to add
-the same to the changelog. But again, this last step is optional.
+noteworthy beyond the automatically generated content. Also make sure to add the
+same to the changelog. But again, this last step is optional.
 
 ## How to setup local dev environment?
 
 Ensure that [asdf](https://github.com/asdf-vm/asdf) is installed. It is used for
-a few CLI tools that are executed automatically by pre-commit. Read
-[`asdf.md`](asdf.md) for more information.
+a few CLI tools that are executed automatically by pre-commit. You can skip this
+step if you prefer to install the tools directly. Read [`asdf.md`](asdf.md) for
+more information.
 
-Install the required tools with asdf.
+Install the required tools with asdf:
 
 ```shell
+asdf plugin add shfmt https://github.com/luizm/asdf-shfmt
+asdf plugin add shellcheck https://github.com/luizm/asdf-shellcheck
 asdf install
 ```
 
