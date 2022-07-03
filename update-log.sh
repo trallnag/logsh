@@ -10,16 +10,16 @@ directory as the script itself. To use it, execute it.
 <https://github.com/trallnag/logsh>
 
 Usage:
-    $0 [reference]
+  update-log.sh <reference>
 
 Options:
-    reference: Git reference to checkout. For example a tag. If this
-               is not set, the latest commit on the default branch
-               will be checked out and used.
-    -h, --help: Print this help message.
+  reference: Git reference to checkout. For example a tag. If this is not set,
+    the latest commit on the default branch will be used.
+
+  -h, --help: Print this help message.
 
 Examples:
-    $0 v1.2.3
+  update-log.sh v1.2.3
 EOF
 }
 
@@ -32,9 +32,9 @@ source_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 # ------------------------------------------------------------------------------
 
 if [ -z "$1" ]; then
-    reference=master
+  reference=master
 else
-    reference="$1"
+  reference="$1"
 fi
 
 set -eu
@@ -42,20 +42,20 @@ set -eu
 dir=/tmp/git-trallnag-logsh
 
 if ! [ -d "$dir/.git" ]; then
-    echo "'$dir/.git' does not exist yet. Time to clone."
-    echo "Clone 'https://github.com/trallnag/logsh.git' to '$dir'..."
-    git clone https://github.com/trallnag/logsh.git "$dir"
+  echo "'$dir/.git' does not exist yet. Time to clone."
+  echo "Clone 'https://github.com/trallnag/logsh.git' to '$dir'..."
+  git clone https://github.com/trallnag/logsh.git "$dir"
 else
-    echo "'$dir/.git' already exists. No need to clone."
-    echo "Pull 'https://github.com/trallnag/logsh.git' at '$dir'..."
+  echo "'$dir/.git' already exists. No need to clone."
+  echo "Pull 'https://github.com/trallnag/logsh.git' at '$dir'..."
+  cd "$dir"
+  git checkout master
+  if ! git pull --all --tags; then
+    cd ..
+    rm -rf "$dir"
+    git clone https://github.com/trallnag/logsh.git "$dir"
     cd "$dir"
-    git checkout master
-    if ! git pull --all --tags; then
-        cd ..
-        rm -rf "$dir"
-        git clone https://github.com/trallnag/logsh.git "$dir"
-        cd "$dir"
-    fi
+  fi
 fi
 
 git config advice.detachedHead false
